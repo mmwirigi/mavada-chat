@@ -1,26 +1,28 @@
-# Mavada Technologies Water ATM Chat API
+# Mavada Technologies Water ATM Chat
 **Powered by IMPERIAL ENTERPRISE**
 
-AI-powered customer support + sales chatbot with 100+ blog knowledge base, SEO optimization, and WhatsApp pre-order integration.
-
-## Quick Start
-1. `cp .env.example .env` and add your OpenAI API key
-2. `pip install -r requirements.txt`
-3. `python main.py`
-4. Open http://localhost:8000/chat
+## Vercel Deployment Structure
+```
+├── api/
+│   └── index.py          ← FastAPI backend (serverless function)
+├── public/
+│   └── index.html         ← Chat frontend (static)
+├── vercel.json            ← Routing config
+├── requirements.txt       ← Python dependencies
+└── .env.example           ← Environment variables template
+```
 
 ## Deploy to Vercel
-1. Push to GitHub
-2. Connect to Vercel
-3. Add `OPENAI_API_KEY` environment variable
-4. Deploy
+1. Push this folder to GitHub
+2. Connect repo to [Vercel](https://vercel.com)  
+3. Add environment variable: `OPENAI_API_KEY`
+4. Deploy — your chat will be at the root URL `/`
 
-## Features
-- 🤖 GPT-4.1-mini AI chatbot
-- 📚 100+ blog knowledge base
-- 🛒 Pre-order → WhatsApp integration
-- 📱 M-Pesa, mobile-first design
-- 🔍 Full SEO (meta tags, schema.org, FAQ structured data)
-- 🌊 Custom branded UI
+## Local Development
+```bash
+pip install -r requirements.txt uvicorn
+cd api && python index.py
+# Then open public/index.html in browser
+```
 
 ## Powered by IMPERIAL ENTERPRISE
